@@ -1,3 +1,4 @@
+
 <?php
 
 require_once "config/database.php";
@@ -10,32 +11,50 @@ $row = mysqli_fetch_assoc($result);
 
 $total_slots = $row["total"];
 
+include "includes/header.php";
+
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<section class="hero">
 
-<head>
+    <h1>
+        Smart Parking Slot Booking
+        & Management System
+    </h1>
 
-    <meta charset="UTF-8">
+    <p>
+        Book your parking slot quickly and easily.
+    </p>
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <div class="hero-buttons">
 
-    <title>Smart Parking</title>
+        <a href="login.php" class="btn">
+            Login
+        </a>
 
-    <link rel="stylesheet" href="css/style.css">
+        <a href="register.php" class="btn">
+            Register
+        </a>
 
-</head>
+    </div>
 
-<body>
+</section>
 
-    <h1>Smart Parking Slot Booking & Management System</h1>
 
-    <p>Database connected successfully!</p>
+<section class="parking-info">
 
-    <p>Total Parking Slots: <?php echo $total_slots; ?></p>
+    <h2>Parking Information</h2>
 
-</body>
+    <p>
+        Total Parking Slots:
+        <strong><?php echo $total_slots; ?></strong>
+    </p>
 
-</html>
+</section>
+
+
+<?php
+
+include "includes/footer.php";
+
+?>
