@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f7fb;
@@ -25,6 +29,9 @@ body {
 .main-header {
     background-color: #111827;
     padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar {
@@ -39,11 +46,17 @@ body {
     font-weight: bold;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+}
+
 nav a {
     color: white;
     text-decoration: none;
     margin-left: 25px;
     font-size: 16px;
+    transition: 0.3s;
 }
 
 nav a:hover {
@@ -65,7 +78,7 @@ nav a:hover {
 ========================= */
 
 .hero {
-    min-height: 550px;
+    min-height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,8 +87,9 @@ nav a:hover {
 
     background: linear-gradient(
         135deg,
-        #e0f2fe,
-        #eff6ff
+        #dbeafe,
+        #eff6ff,
+        #f8fafc
     );
 }
 
@@ -87,7 +101,7 @@ nav a:hover {
     color: #2563eb;
     font-size: 14px;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     margin-bottom: 15px;
 }
 
@@ -122,10 +136,10 @@ nav a:hover {
     display: inline-block;
     padding: 13px 28px;
     margin: 5px;
-    border-radius: 6px;
+    border-radius: 7px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .btn-primary {
@@ -135,6 +149,7 @@ nav a:hover {
 
 .btn-primary:hover {
     background-color: #1d4ed8;
+    transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -146,6 +161,7 @@ nav a:hover {
 .btn-secondary:hover {
     background-color: #2563eb;
     color: white;
+    transform: translateY(-2px);
 }
 
 
@@ -197,9 +213,14 @@ section {
 .availability-card {
     text-align: center;
     padding: 35px 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     background-color: #f8fafc;
     border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.availability-card:hover {
+    transform: translateY(-5px);
 }
 
 .availability-icon {
@@ -235,13 +256,14 @@ section {
     background-color: white;
     padding: 30px 20px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid #e5e7eb;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .feature-icon {
@@ -274,6 +296,7 @@ section {
 
 .step {
     text-align: center;
+    padding: 20px;
 }
 
 .step-number {
@@ -340,7 +363,7 @@ section {
 
 
 /* =========================
-   RESPONSIVE DESIGN
+   TABLET
 ========================= */
 
 @media (max-width: 900px) {
@@ -356,18 +379,45 @@ section {
     .hero h1 {
         font-size: 42px;
     }
+
+    .availability-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 650px) {
+
+    .main-header {
+        padding: 15px 0;
+    }
 
     .navbar {
         flex-direction: column;
         gap: 15px;
     }
 
+    .logo {
+        font-size: 21px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     nav a {
-        margin: 0 8px;
+        margin: 5px 8px;
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 60px 15px;
     }
 
     .hero h1 {
@@ -376,6 +426,25 @@ section {
 
     .hero-description {
         font-size: 17px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 220px;
+        text-align: center;
+    }
+
+    section {
+        padding: 60px 15px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
     }
 
     .availability-cards {
@@ -392,5 +461,35 @@ section {
 
     .cta h2 {
         font-size: 28px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .hero-subtitle {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    nav a {
+        font-size: 13px;
+        margin: 4px 6px;
     }
 }
