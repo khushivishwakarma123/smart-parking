@@ -493,3 +493,120 @@ section {
         margin: 4px 6px;
     }
 }
+/* ================================
+   REGISTRATION PAGE
+================================ */
+
+.register-section {
+    min-height: 75vh;
+    padding: 60px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-container {
+    width: 100%;
+    max-width: 500px;
+
+    background-color: white;
+
+    padding: 40px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.register-container h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.register-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.register-btn {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.login-link a {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+
+/* Registration messages */
+
+.message {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.message.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* Mobile registration */
+
+@media (max-width: 650px) {
+
+    .register-section {
+        padding: 40px 15px;
+    }
+
+    .register-container {
+        padding: 25px 20px;
+    }
+
+    .register-container h1 {
+        font-size: 25px;
+    }
+}
