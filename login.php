@@ -1,10 +1,13 @@
 <?php
 
+session_start();
+
 require_once "config/database.php";
 
 $message = "";
 $message_type = "";
 
+// Check if login form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $email = trim($_POST["email"]);
@@ -33,27 +36,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   FROM users
                   WHERE email = ?";
 
+        // Prepare SQL statement
         $stmt = mysqli_prepare($conn, $query);
 
-        mysqli_stmt_bind_param(
-            $stmt,
-            "s",
-            $email
-        );
+        if ($stmt) {
 
-        mysqli_stmt_execute($stmt);
+            // Bind email
+            mysqli_stmt_bind_param(
+                $stmt,
+                "s",
+                $email
+            );
 
-        $result = mysqli_stmt_get_result($stmt);
+            // Execute query
+            mysqli_stmt_execute($stmt);
 
-        if (mysqli_num_rows($result) == 1) {
+            // Get result
+            $result = mysqli_stmt_get_result($stmt);
 
-            $user = mysqli_fetch_assoc($result);
+            // Check whether user exists
+            if (mysqli_num_rows($result) == 1) {
 
-            // Verify hashed password
-            if (password_verify($password, $user["password"])) {
+                $user = mysqli_fetch_assoc($result);
 
-                $message = "Login successful!";
-                $message_type = "success";
+                // Verify password
+                if (password_verify($password, $user["password"])) {
+
+                    // Store user information in session
+                    $_SESSION["user_id"] = $user["id"];
+                    $_SESSION["user_name"] = $user["name"];
+                    $_SESSION["user_email"] = $user["email"];
+                    $_SESSION["user_role"] = $user["role"];
+
+                    // Redirect to dashboard
+                    header("Location: dashboard.php");
+                    exit;
+
+                } else {
+
+                    $message = "Invalid email or password.";
+                    $message_type = "error";
+                }
 
             } else {
 
@@ -61,13 +84,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $message_type = "error";
             }
 
+            mysqli_stmt_close($stmt);
+
         } else {
 
-            $message = "Invalid email or password.";
+            $message = "Database query failed.";
             $message_type = "error";
         }
-
-        mysqli_stmt_close($stmt);
     }
 }
 
@@ -88,12 +111,17 @@ include "includes/header.php";
         <?php if (!empty($message)) { ?>
 
             <div class="message <?php echo $message_type; ?>">
+
                 <?php echo htmlspecialchars($message); ?>
+
             </div>
 
         <?php } ?>
 
+
         <form method="POST" action="login.php">
+
+            <!-- Email -->
 
             <div class="form-group">
 
@@ -112,6 +140,8 @@ include "includes/header.php";
             </div>
 
 
+            <!-- Password -->
+
             <div class="form-group">
 
                 <label for="password">
@@ -129,7 +159,12 @@ include "includes/header.php";
             </div>
 
 
-            <button type="submit" class="btn login-btn">
+            <!-- Login Button -->
+
+            <button
+                type="submit"
+                class="btn login-btn"
+            >
                 Login
             </button>
 
@@ -137,13 +172,19 @@ include "includes/header.php";
 
 
         <p class="register-link">
+
             Don't have an account?
-            <a href="register.php">Create an account</a>
+
+            <a href="register.php">
+                Create an account
+            </a>
+
         </p>
 
     </div>
 
 </section>
+
 
 <?php
 
