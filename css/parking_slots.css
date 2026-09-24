@@ -1,0 +1,208 @@
+/* =================================
+   PARKING SLOTS PAGE
+================================= */
+
+.parking-slots-section {
+    min-height: 75vh;
+    padding: 60px 20px;
+}
+
+.parking-slots-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.parking-slots-label {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.parking-slots-heading h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.parking-slots-heading p:last-child {
+    color: #6b7280;
+}
+
+
+/* =================================
+   SLOT GRID
+================================= */
+
+.slots-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+
+/* =================================
+   SLOT CARD
+================================= */
+
+.slot-card {
+    background-color: white;
+    padding: 30px 20px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s;
+}
+
+.slot-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+.slot-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.slot-card h2 {
+    font-size: 27px;
+    color: #2563eb;
+    margin-bottom: 18px;
+}
+
+.slot-detail {
+    margin: 7px 0;
+    color: #555;
+}
+
+
+/* =================================
+   STATUS
+================================= */
+
+.slot-status {
+    margin: 20px 0 15px;
+}
+
+.status {
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.status.available {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.status.occupied {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* =================================
+   SLOT BUTTON
+================================= */
+
+.slot-btn {
+    width: 100%;
+
+    padding: 11px 10px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    cursor: not-allowed;
+}
+
+.available-btn {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+.occupied-btn {
+    background-color: #e5e7eb;
+    color: #6b7280;
+}
+
+
+/* =================================
+   NO SLOTS
+================================= */
+
+.no-slots {
+    grid-column: 1 / -1;
+
+    background-color: white;
+
+    padding: 50px;
+
+    text-align: center;
+
+    border-radius: 15px;
+}
+
+
+/* =================================
+   BACK TO DASHBOARD
+================================= */
+
+.back-dashboard {
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+
+    .slots-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .parking-slots-section {
+        padding: 40px 15px;
+    }
+
+    .parking-slots-heading h1 {
+        font-size: 29px;
+    }
+
+    .slots-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .slot-card {
+        padding: 25px 20px;
+    }
+
+}
