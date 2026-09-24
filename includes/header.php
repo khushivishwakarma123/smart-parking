@@ -14,6 +14,7 @@
     <title>Smart Parking</title>
 
     <link rel="stylesheet" href="/smart-parking/css/style.css">
+    <link rel="stylesheet" href="/smart-parking/css/dashboard.css">
 
 </head>
 
