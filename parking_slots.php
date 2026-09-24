@@ -206,11 +206,15 @@ include "includes/header.php";
 
         <div class="back-dashboard">
 
-            <a href="dashboard.php" class="btn">
-                ← Back to Dashboard
-            </a>
+    <a href="check_availability.php" class="btn btn-primary">
+        Check Slot Availability
+    </a>
 
-        </div>
+    <a href="dashboard.php" class="btn">
+        ← Back to Dashboard
+    </a>
+
+</div>
 
     </div>
 

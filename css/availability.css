@@ -1,0 +1,84 @@
+/* =================================
+   AVAILABILITY CHECK
+================================= */
+
+.availability-check-section {
+    min-height: 75vh;
+    padding: 60px 20px;
+}
+
+.availability-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.availability-heading h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.availability-heading p:last-child {
+    color: #6b7280;
+}
+
+.availability-form-container {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.availability-form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.availability-form-container .form-group {
+    margin-bottom: 0;
+}
+
+.availability-form-container input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.availability-btn {
+    display: block;
+    margin: 25px auto 0;
+}
+
+.available-results {
+    margin-top: 40px;
+}
+
+.available-results h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.message {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+@media (max-width: 700px) {
+
+    .availability-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .availability-form-container {
+        padding: 25px 20px;
+    }
+
+    .availability-heading h1 {
+        font-size: 29px;
+    }
+
+}
