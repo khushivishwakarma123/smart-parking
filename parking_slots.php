@@ -142,14 +142,12 @@ include "includes/header.php";
                         if ($slot["status"] == "Available") {
 
                         ?>
-
-                            <button
-                                type="button"
-                                class="slot-btn available-btn"
-                                disabled
-                            >
-                                Available for Booking
-                            </button>
+<a
+    href="book_slot.php?slot_id=<?php echo $slot["id"]; ?>"
+    class="slot-btn available-btn"
+>
+    Book This Slot
+</a>
 
                         <?php
 

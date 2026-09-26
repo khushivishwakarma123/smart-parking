@@ -14,8 +14,10 @@
     <title>Smart Parking</title>
 
     <link rel="stylesheet" href="/smart-parking/css/style.css">
-    <link rel="stylesheet" href="/smart-parking/css/dashboard.css">
-    <link rel="stylesheet" href="/smart-parking/css/parking_slots.css">
+<link rel="stylesheet" href="/smart-parking/css/dashboard.css">
+<link rel="stylesheet" href="/smart-parking/css/parking_slots.css">
+<link rel="stylesheet" href="/smart-parking/css/availability.css">
+<link rel="stylesheet" href="/smart-parking/css/booking.css">
 
 </head>
 
