@@ -1,0 +1,123 @@
+/* =================================
+   BOOKING PAGE
+================================= */
+
+.booking-section {
+    min-height: 75vh;
+    padding: 60px 20px;
+}
+
+.booking-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.booking-heading h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.booking-heading p:last-child {
+    color: #6b7280;
+}
+
+.booking-container {
+    max-width: 700px;
+    margin: 0 auto;
+
+    background-color: white;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Selected Slot */
+
+.selected-slot {
+    text-align: center;
+
+    background-color: #f8fafc;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    margin-bottom: 30px;
+
+    border: 1px solid #e5e7eb;
+}
+
+.selected-slot h2 {
+    color: #2563eb;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.selected-slot p {
+    margin: 6px 0;
+    color: #555;
+}
+
+.selected-slot .status {
+    margin-top: 15px;
+}
+
+
+/* Time Fields */
+
+.booking-time-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.booking-container input {
+    width: 100%;
+    padding: 12px 14px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.booking-container input:focus {
+    border-color: #2563eb;
+}
+
+.booking-btn {
+    width: 100%;
+    margin-top: 10px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .booking-section {
+        padding: 40px 15px;
+    }
+
+    .booking-container {
+        padding: 25px 20px;
+    }
+
+    .booking-heading h1 {
+        font-size: 29px;
+    }
+
+    .booking-time-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+}

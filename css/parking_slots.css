@@ -119,19 +119,30 @@
 ================================= */
 
 .slot-btn {
+    display: block;
     width: 100%;
-
     padding: 11px 10px;
-
     border: none;
-
     border-radius: 7px;
-
     font-weight: bold;
-
-    cursor: not-allowed;
+    text-decoration: none;
+    text-align: center;
 }
 
+.available-btn {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+.available-btn:hover {
+    background-color: #bfdbfe;
+}
+
+.occupied-btn {
+    background-color: #e5e7eb;
+    color: #6b7280;
+    cursor: not-allowed;
+}
 .available-btn {
     background-color: #dbeafe;
     color: #1d4ed8;
