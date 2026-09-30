@@ -149,3 +149,31 @@
     }
 
 }
+/* =================================
+   CANCEL BOOKING
+================================= */
+
+.cancel-btn {
+    border: none;
+    background-color: #dc2626;
+    color: white;
+
+    padding: 8px 14px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.cancel-btn:hover {
+    background-color: #b91c1c;
+}
+
+.cancelled-text {
+    color: #991b1b;
+    font-size: 13px;
+    font-weight: bold;
+}
