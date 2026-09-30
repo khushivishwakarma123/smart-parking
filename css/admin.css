@@ -1,0 +1,185 @@
+/* =================================
+   ADMIN LOGIN
+================================= */
+
+.admin-login-section {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 15px;
+
+    background: #f5f7fb;
+}
+
+.admin-login-container {
+    width: 100%;
+    max-width: 450px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Icon */
+
+.admin-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+
+/* Label */
+
+.admin-label {
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+}
+
+
+/* Heading */
+
+.admin-login-container h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.admin-subtitle {
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+
+/* Form */
+
+.admin-login-container .form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.admin-login-container .form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+.admin-login-container .form-group input {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.admin-login-container .form-group input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 2px rgba(37, 99, 235, 0.10);
+}
+
+
+/* Login Button */
+
+.admin-login-btn {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background-color: #111827;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.admin-login-btn:hover {
+    background-color: #1f2937;
+
+    transform: translateY(-2px);
+}
+
+
+/* Messages */
+
+.admin-login-container .message {
+    margin-bottom: 20px;
+
+    padding: 12px 15px;
+
+    border-radius: 7px;
+}
+
+.admin-login-container .message.success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.admin-login-container .message.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* Back */
+
+.admin-back-link {
+    margin-top: 25px;
+}
+
+.admin-back-link a {
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .admin-login-container {
+        padding: 30px 20px;
+    }
+
+    .admin-login-container h1 {
+        font-size: 27px;
+    }
+
+}
