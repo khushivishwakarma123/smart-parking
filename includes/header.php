@@ -18,6 +18,9 @@
 <link rel="stylesheet" href="/smart-parking/css/parking_slots.css">
 <link rel="stylesheet" href="/smart-parking/css/availability.css">
 <link rel="stylesheet" href="/smart-parking/css/booking.css">
+<link rel="stylesheet" href="/smart-parking/css/my_bookings.css">
+
+
 
 </head>
 

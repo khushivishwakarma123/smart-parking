@@ -1,0 +1,151 @@
+/* =================================
+   MY BOOKINGS
+================================= */
+
+.my-bookings-section {
+    min-height: 75vh;
+    padding: 60px 20px;
+}
+
+.my-bookings-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.my-bookings-heading h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.my-bookings-heading p:last-child {
+    color: #6b7280;
+}
+
+
+/* =================================
+   TABLE
+================================= */
+
+.bookings-table-container {
+    width: 100%;
+    overflow-x: auto;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.bookings-table {
+    width: 100%;
+    min-width: 850px;
+
+    border-collapse: collapse;
+}
+
+.bookings-table th {
+    background-color: #111827;
+    color: white;
+
+    padding: 15px;
+
+    text-align: left;
+
+    font-size: 14px;
+}
+
+.bookings-table td {
+    padding: 15px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    font-size: 14px;
+}
+
+.bookings-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.bookings-table small {
+    color: #6b7280;
+}
+
+
+/* =================================
+   BOOKING STATUS
+================================= */
+
+.booking-status {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.booking-status.pending {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.booking-status.cancelled {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* =================================
+   NO BOOKINGS
+================================= */
+
+.no-bookings {
+    background-color: white;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.no-bookings-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.no-bookings h2 {
+    margin-bottom: 10px;
+}
+
+.no-bookings p {
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .my-bookings-section {
+        padding: 40px 15px;
+    }
+
+    .my-bookings-heading h1 {
+        font-size: 29px;
+    }
+
+    .bookings-table-container {
+        overflow-x: auto;
+    }
+
+}
