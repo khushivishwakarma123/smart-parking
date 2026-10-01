@@ -1,0 +1,213 @@
+/* =====================================
+   ADMIN BOOKINGS
+===================================== */
+
+.admin-bookings-page {
+    min-height: 80vh;
+    padding: 50px 20px;
+    background-color: #f5f7fb;
+}
+
+.admin-bookings-container {
+    width: 95%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.bookings-page-header {
+    margin-bottom: 30px;
+}
+
+.bookings-page-header h1 {
+    font-size: 32px;
+    margin: 0 0 8px;
+}
+
+.bookings-page-header p {
+    margin: 0;
+    color: #6b7280;
+}
+
+
+/* =====================================
+   MESSAGE
+===================================== */
+
+.admin-message {
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.admin-message.success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.admin-message.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* =====================================
+   TABLE
+===================================== */
+
+.admin-bookings-table-container {
+    background-color: white;
+    border-radius: 15px;
+    overflow-x: auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.admin-bookings-table {
+    width: 100%;
+    min-width: 1100px;
+    border-collapse: collapse;
+}
+
+.admin-bookings-table th {
+    background-color: #111827;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.admin-bookings-table td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+}
+
+.admin-bookings-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.admin-bookings-table small {
+    color: #6b7280;
+}
+
+.booking-slot {
+    color: #2563eb;
+}
+
+
+/* =====================================
+   STATUS
+===================================== */
+
+.admin-booking-status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.admin-booking-status.pending {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.admin-booking-status.confirmed {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.admin-booking-status.cancelled {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* =====================================
+   UPDATE FORM
+===================================== */
+
+.booking-status-select {
+    padding: 8px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.booking-status-select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.update-booking-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.update-booking-btn:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* =====================================
+   NO BOOKINGS
+===================================== */
+
+.no-bookings-admin {
+    background-color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.no-bookings-admin-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.no-bookings-admin h2 {
+    margin-bottom: 10px;
+}
+
+.no-bookings-admin p {
+    color: #6b7280;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 700px) {
+
+    .admin-bookings-page {
+        padding: 40px 15px;
+    }
+
+    .admin-bookings-container {
+        width: 100%;
+    }
+
+    .bookings-page-header h1 {
+        font-size: 27px;
+    }
+
+    .admin-bookings-table-container {
+        overflow-x: auto;
+    }
+
+}
