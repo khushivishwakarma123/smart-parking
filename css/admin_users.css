@@ -1,0 +1,252 @@
+/* =====================================
+   ADMIN USER MANAGEMENT
+===================================== */
+
+.admin-users-page {
+    min-height: 80vh;
+    padding: 50px 20px;
+    background-color: #f5f7fb;
+}
+
+.admin-users-container {
+    width: 95%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+
+/* =====================================
+   PAGE HEADER
+===================================== */
+
+.users-page-header {
+    margin-bottom: 30px;
+}
+
+.users-label {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.users-page-header h1 {
+    margin: 0 0 8px;
+    font-size: 32px;
+}
+
+.users-page-header p:last-child {
+    margin: 0;
+    color: #6b7280;
+}
+
+
+/* =====================================
+   MESSAGE
+===================================== */
+
+.admin-user-message {
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.admin-user-message.success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.admin-user-message.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* =====================================
+   TABLE
+===================================== */
+
+.admin-users-table-container {
+    background-color: white;
+    border-radius: 15px;
+    overflow-x: auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.admin-users-table {
+    width: 100%;
+    min-width: 1100px;
+    border-collapse: collapse;
+}
+
+.admin-users-table th {
+    background-color: #111827;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.admin-users-table td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+}
+
+.admin-users-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+
+/* =====================================
+   ROLE
+===================================== */
+
+.user-role {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.admin-role {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+.normal-role {
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+.current-user {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 11px;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.protected-admin {
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* =====================================
+   ACTION FORM
+===================================== */
+
+.user-action-form {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 5px;
+}
+
+.role-select {
+    padding: 8px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 13px;
+}
+
+.role-select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.role-update-btn {
+    border: none;
+    background-color: #2563eb;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.role-update-btn:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* =====================================
+   DELETE
+===================================== */
+
+.delete-user-form {
+    display: inline;
+}
+
+.delete-user-btn {
+    border: none;
+    background-color: #dc2626;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.delete-user-btn:hover {
+    background-color: #b91c1c;
+}
+
+
+/* =====================================
+   EMPTY
+===================================== */
+
+.no-users {
+    background-color: white;
+    padding: 60px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.no-users-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.no-users h2 {
+    margin-bottom: 10px;
+}
+
+.no-users p {
+    color: #6b7280;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 700px) {
+
+    .admin-users-page {
+        padding: 40px 15px;
+    }
+
+    .admin-users-container {
+        width: 100%;
+    }
+
+    .users-page-header h1 {
+        font-size: 27px;
+    }
+
+    .admin-users-table-container {
+        overflow-x: auto;
+    }
+
+}
