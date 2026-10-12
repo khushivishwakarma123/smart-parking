@@ -1,76 +1,75 @@
 <?php
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 require_once "config/database.php";
 
 $message = "";
 $message_type = "";
 
-// Check if login form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// Check if the login form is submitted
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $email = trim($_POST["email"]);
-    $password = $_POST["password"];
+    // Get form values safely
+    $email = trim($_POST["email"] ?? "");
+    $password = $_POST["password"] ?? "";
 
     // Check empty fields
-    if (empty($email) || empty($password)) {
+    if ($email === "" || $password === "") {
 
         $message = "Please enter email and password.";
         $message_type = "error";
 
-    }
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-    // Check email format
-    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-
+        // Validate email format
         $message = "Please enter a valid email address.";
         $message_type = "error";
 
-    }
+    } else {
 
-    else {
-
-        // Find user by email
+        // Find user by email using a prepared statement
         $query = "SELECT id, name, email, password, role
                   FROM users
                   WHERE email = ?";
 
-        // Prepare SQL statement
         $stmt = mysqli_prepare($conn, $query);
 
         if ($stmt) {
 
-            // Bind email
-            mysqli_stmt_bind_param(
-                $stmt,
-                "s",
-                $email
-            );
+            mysqli_stmt_bind_param($stmt, "s", $email);
 
-            // Execute query
-            mysqli_stmt_execute($stmt);
+            if (mysqli_stmt_execute($stmt)) {
 
-            // Get result
-            $result = mysqli_stmt_get_result($stmt);
+                $result = mysqli_stmt_get_result($stmt);
 
-            // Check whether user exists
-            if (mysqli_num_rows($result) == 1) {
+                if ($result && mysqli_num_rows($result) === 1) {
 
-                $user = mysqli_fetch_assoc($result);
+                    $user = mysqli_fetch_assoc($result);
 
-                // Verify password
-                if (password_verify($password, $user["password"])) {
+                    // Verify the password against its stored hash
+                    if (password_verify($password, $user["password"])) {
 
-                    // Store user information in session
-                    $_SESSION["user_id"] = $user["id"];
-                    $_SESSION["user_name"] = $user["name"];
-                    $_SESSION["user_email"] = $user["email"];
-                    $_SESSION["user_role"] = $user["role"];
+                        // Create a new session ID after login
+                        session_regenerate_id(true);
 
-                    // Redirect to dashboard
-                    header("Location: dashboard.php");
-                    exit;
+                        // Store user information in the session
+                        $_SESSION["user_id"] = $user["id"];
+                        $_SESSION["user_name"] = $user["name"];
+                        $_SESSION["user_email"] = $user["email"];
+                        $_SESSION["user_role"] = $user["role"];
+
+                        // Redirect to the user dashboard
+                        header("Location: dashboard.php");
+                        exit;
+
+                    } else {
+
+                        $message = "Invalid email or password.";
+                        $message_type = "error";
+                    }
 
                 } else {
 
@@ -78,9 +77,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $message_type = "error";
                 }
 
+                if ($result) {
+                    mysqli_free_result($result);
+                }
+
             } else {
 
-                $message = "Invalid email or password.";
+                $message = "Unable to process login. Please try again.";
                 $message_type = "error";
             }
 
@@ -88,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         } else {
 
-            $message = "Database query failed.";
+            $message = "Unable to process login. Please try again.";
             $message_type = "error";
         }
     }
@@ -110,56 +113,44 @@ include "includes/header.php";
 
         <?php if (!empty($message)) { ?>
 
-            <div class="message <?php echo $message_type; ?>">
-
+            <div class="message <?php echo htmlspecialchars($message_type); ?>">
                 <?php echo htmlspecialchars($message); ?>
-
             </div>
 
         <?php } ?>
 
-
         <form method="POST" action="login.php">
-
-            <!-- Email -->
 
             <div class="form-group">
 
-                <label for="email">
-                    Email Address
-                </label>
+                <label for="email">Email Address</label>
 
                 <input
                     type="email"
                     id="email"
                     name="email"
                     placeholder="Enter your email"
+                    value="<?php echo htmlspecialchars($email ?? '', ENT_QUOTES, 'UTF-8'); ?>"
+                    autocomplete="email"
                     required
                 >
 
             </div>
 
-
-            <!-- Password -->
-
             <div class="form-group">
 
-                <label for="password">
-                    Password
-                </label>
+                <label for="password">Password</label>
 
                 <input
                     type="password"
                     id="password"
                     name="password"
                     placeholder="Enter your password"
+                    autocomplete="current-password"
                     required
                 >
 
             </div>
-
-
-            <!-- Login Button -->
 
             <button
                 type="submit"
@@ -170,21 +161,14 @@ include "includes/header.php";
 
         </form>
 
-
         <p class="register-link">
-
             Don't have an account?
-
-            <a href="register.php">
-                Create an account
-            </a>
-
+            <a href="register.php">Create an account</a>
         </p>
 
     </div>
 
 </section>
-
 
 <?php
 
